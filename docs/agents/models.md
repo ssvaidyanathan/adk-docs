@@ -255,13 +255,13 @@ public class DirectAnthropicAgent {
 
 Apigee acts as a powerful AI Gateway, transforming how you manage and govern your Large Language Model (LLM) traffic. By exposing your LLM endpoint (like Vertex AI or the Gemini API) through an Apigee proxy, you immediately gain enterprise-grade capabilities:
 
-- Model Safety: Implement security policies like Model Armor for threat protection.
+- **Model Safety:** Implement security policies like Model Armor for threat protection.
 
-- Traffic Governance: Enforce Rate Limiting and Token Limiting to manage costs and prevent abuse.
+- **Traffic Governance:** Enforce Rate Limiting and Token Limiting to manage costs and prevent abuse.
 
-- Performance: Improve response times and efficiency using Semantic Caching and advanced model routing.
+- **Performance:** Improve response times and efficiency using Semantic Caching and advanced model routing.
 
-- Monitoring & Visibility: Get granular monitoring, analysis, and auditing of all your AI requests.
+- **Monitoring & Visibility:** Get granular monitoring, analysis, and auditing of all your AI requests.
 
 **NOTE:** The `ApigeeLLM` wrapper is currently designed for use with Vertex AI and the Gemini API (generateContent). We are continually expanding support for other models.
 
