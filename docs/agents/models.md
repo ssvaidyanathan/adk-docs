@@ -20,8 +20,8 @@ ADK primarily uses two mechanisms for model integration:
    `google-genai` library.
 2. **Wrapper Classes:** For broader compatibility, especially with models
    outside the Google ecosystem or those requiring specific client
-   configurations (like models accessed via LiteLLM). You instantiate a specific
-   wrapper class (e.g., `LiteLlm`) and pass this object as the `model` parameter
+   configurations (like models accessed via Apigee or LiteLLM). You instantiate a specific
+   wrapper class (e.g., `ApigeeLlm` or `LiteLlm`) and pass this object as the `model` parameter
    to your `LlmAgent`.
 
 The following sections guide you through using these methods based on your needs.
@@ -249,7 +249,52 @@ public class DirectAnthropicAgent {
 }
 ```
 
+## Using Gemini Models (Vertex/Gemini API) via ApigeeLLM
 
+![python_only](https://img.shields.io/badge/Supported_in-Python-blue)
+
+Apigee acts as a powerful AI Gateway, transforming how you manage and govern your Large Language Model (LLM) traffic. By exposing your LLM endpoint (like Vertex AI or the Gemini API) through an Apigee proxy, you immediately gain enterprise-grade capabilities:
+
+- Model Safety: Implement security policies like Model Armor for threat protection.
+
+- Traffic Governance: Enforce Rate Limiting and Token Limiting to manage costs and prevent abuse.
+
+- Performance: Improve response times and efficiency using Semantic Caching and advanced model routing.
+
+- Monitoring & Visibility: Get granular monitoring, analysis, and auditing of all your AI requests.
+
+**NOTE:** The `ApigeeLLM` wrapper is currently designed for use with Vertex AI and the Gemini API (generateContent). We are continually expanding support for other models.
+
+**Integration Method:**  To integrate Apigee's governance into your agent's workflow, simply instantiate the `ApigeeLlm` wrapper and pass it to your Agent Development Kit's (ADK) `LlmAgent`.
+
+**Example:**
+
+```python
+
+from google.adk.agents import LlmAgent
+from google.adk.models.apigee_llm import ApigeeLlm
+
+# Instantiate the ApigeeLlm wrapper
+model = ApigeeLlm(
+    # Specify the Apigee route to your model (e.g., apigee/vertex_ai/v1/gemini-2.5-flash)
+    model="apigee/vertex_ai/v1/gemini-2.5-flash", 
+    # The base URL of your deployed Apigee proxy
+    proxy_url=f"https://{APIGEE_URL}", 
+    # Pass necessary authentication/authorization headers (like an API key)
+    custom_headers={"x-apikey": apikey_credential_str}
+)
+
+# Pass the configured model wrapper to your LlmAgent
+agent = LlmAgent(
+    model=model,
+    name="my_governed_agent",
+    instruction="You are a helpful assistant powered by Gemini and governed by Apigee.",
+    # ... other agent parameters
+)
+
+```
+
+With this configuration, every API call from your agent will be routed through Apigee first, where all necessary policies (security, rate limiting, logging) are executed before the request is securely forwarded to the underlying LLM endpoint.
 
 ## Using Cloud & Proprietary Models via LiteLLM
 
