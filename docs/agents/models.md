@@ -279,7 +279,7 @@ model = ApigeeLlm(
     # Specify the Apigee route to your model (e.g., apigee/vertex_ai/v1/gemini-2.5-flash)
     model="apigee/vertex_ai/v1/gemini-2.5-flash", 
     # The proxy URL of your deployed Apigee proxy including the base path
-    proxy_url=f"https://{APIGEE_URL}", 
+    proxy_url=f"https://{APIGEE_PROXY_URL}", 
     # Pass necessary authentication/authorization headers (like an API key)
     custom_headers={"x-apikey": apikey_credential_str}
 )
