@@ -249,7 +249,7 @@ public class DirectAnthropicAgent {
 }
 ```
 
-## Using Gemini Models (Vertex/Gemini API) via ApigeeLLM
+## Using Gemini Models (Vertex/Gemini API) via Apigee
 
 ![python_only](https://img.shields.io/badge/Supported_in-Python-blue)
 
