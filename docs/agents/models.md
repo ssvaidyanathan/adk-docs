@@ -276,8 +276,8 @@ from google.adk.models.apigee_llm import ApigeeLlm
 
 # Instantiate the ApigeeLlm wrapper
 model = ApigeeLlm(
-    # Specify the Apigee route to your model (e.g., apigee/vertex_ai/v1/gemini-2.5-flash)
-    model="apigee/vertex_ai/v1/gemini-2.5-flash", 
+    # Specify the Apigee route to your model (e.g., apigee/gemini-2.5-flash, apigee/vertex_ai/v1/gemini-2.5-flash, apigee/gemini/v1/gemini-2.5-flash). For more info, check out the ApigeeLlm documentation.
+    model="apigee/gemini-2.5-flash", 
     # The proxy URL of your deployed Apigee proxy including the base path
     proxy_url=f"https://{APIGEE_PROXY_URL}", 
     # Pass necessary authentication/authorization headers (like an API key)
