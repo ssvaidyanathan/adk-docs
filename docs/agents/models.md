@@ -253,7 +253,7 @@ public class DirectAnthropicAgent {
 
 ![python_only](https://img.shields.io/badge/Supported_in-Python-blue)
 
-[Apigee](https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee) acts as a powerful AI Gateway, transforming how you manage and govern your Large Language Model (LLM) traffic. By exposing your LLM endpoint (like Vertex AI or the Gemini API) through an Apigee proxy, you immediately gain enterprise-grade capabilities:
+[Apigee](https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee) acts as a powerful [AI Gateway](https://cloud.google.com/solutions/apigee-ai), transforming how you manage and govern your Large Language Model (LLM) traffic. By exposing your LLM endpoint (like Vertex AI or the Gemini API) through an Apigee proxy, you immediately gain enterprise-grade capabilities:
 
 - **Model Safety:** Implement security policies like Model Armor for threat protection.
 
